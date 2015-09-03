@@ -1,0 +1,25 @@
+
+{  
+  "name": "hachiBox",  
+  "manifest_version": 2,
+  "version": "1.0.0",  
+  "description": "the toolkit for Hachi.",  
+  "background": { 
+  "scripts": ["background.js"]  },
+  "permissions": ["tabs", "http://*/", "https://*/"],
+   "icons": {  
+        "48": "hachiko.png"  
+    },  
+  "page_action": {
+     "default_icon": "add.png",
+    "default_title": "hachi's Box",
+    "default_popup": "popup.html"
+     },
+	 "content_scripts": [{
+	     "matches": ["http://www.zhihu.com/*","https://www.zhihu.com/*"], 
+	     "js": ["jquery.js", "content_script.js"], 
+	     "run_at": "document_end",
+	     "all_frames": true 
+	}]
+
+} 
